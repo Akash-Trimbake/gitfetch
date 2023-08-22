@@ -2,6 +2,8 @@ const express = require("express");
 const axios = require("axios");
 const app = express();
 
+const port = process.env.PORT || 5000;
+
 // Define a route for the root path
 app.get("/", (req, res) => {
   res.send("Hello World! Welcome to the gitfetchAPI");
@@ -110,6 +112,6 @@ app.get("/trendingrepos", async (req, res) => {
 });
 
 // Start the server
-app.listen(8000, () => {
-  console.log("Server listening on port 8000");
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });
